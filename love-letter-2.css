@@ -273,23 +273,47 @@ body {
   background-color: #d9534f;
   color: #fff;
 }
-/* Repurpose the right hump to display your floating face */
+/* =========================================
+   2. THE MASTERPIECE (Fixed Image Replacement)
+   ========================================= */
+
+/* 1. Nuke ALL pink background colors and borders from the main heart and its humps */
+.heart,
+.heart::before,
+.heart::after {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* 2. Hide the left hump entirely */
+.heart::before {
+  display: none !important;
+}
+
+/* 3. Inject your face into the right hump, size it correctly, and center it */
 .heart::after {
   content: "" !important;
   display: block !important;
-  width: 180% !important;  
-  height: 180% !important;
-  position: absolute;
-  top: -40%;
-  left: -40%;
-  background-color: transparent !important;
-  /* UPDATED LINE BELOW: Match the GitHub filename exactly */
+  
+  /* Fixed size to match the original heart so your face isn't massive */
+  width: 35px !important;
+  height: 35px !important;
+  
+  position: absolute !important;
+  
+  /* Perfectly center it inside the floating container */
+  top: 50% !important;
+  left: 50% !important;
+  
+  /* Translate shifts it to absolute center, rotate(45deg) counters the CSS heart's standard tilt */
+  transform: translate(-50%, -50%) rotate(45deg) !important;
+  
+  /* Load the image */
   background-image: url('IMG_3654.PNG') !important;
   background-size: contain !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
   border-radius: 0 !important;
-  
-  /* Counter-rotate the standard 45-degree tilt of CSS hearts so you stay perfectly upright */
-  transform: rotate(45deg) !important; 
 }
