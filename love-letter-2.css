@@ -273,3 +273,23 @@ body {
   background-color: #d9534f;
   color: #fff;
 }
+/* Repurpose the right hump to display your floating face */
+.heart::after {
+  content: "" !important;
+  display: block !important;
+  width: 180% !important;  
+  height: 180% !important;
+  position: absolute;
+  top: -40%;
+  left: -40%;
+  background-color: transparent !important;
+  /* UPDATED LINE BELOW: Match the GitHub filename exactly */
+  background-image: url('IMG_3654.PNG') !important;
+  background-size: contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  border-radius: 0 !important;
+  
+  /* Counter-rotate the standard 45-degree tilt of CSS hearts so you stay perfectly upright */
+  transform: rotate(45deg) !important; 
+}
